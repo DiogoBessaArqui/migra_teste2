@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportTitle">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReportTitle</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodCourse_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodCourse_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodCourse_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CourseName_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CourseName_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CourseName_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="InitialDate_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>InitialDate_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>InitialDate_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EndDate_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EndDate_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Duration_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Duration_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Duration_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodProf_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodProf_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodProf_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProfName_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProfName_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProfName_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodClassroom_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodClassroom_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodClassroom_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ClassroomName_CourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ClassroomName_CourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ClassroomName_CourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodStudent_CourseLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodStudent_CourseLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodStudent_CourseLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StudentName_CourseLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>StudentName_CourseLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StudentName_CourseLineCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CodCourse_CourseCab">
+          <DataField>CodCourse_CourseCab</DataField>
+        </Field>
+        <Field Name="CourseName_CourseCab">
+          <DataField>CourseName_CourseCab</DataField>
+        </Field>
+        <Field Name="InitialDate_CourseCab">
+          <DataField>InitialDate_CourseCab</DataField>
+        </Field>
+        <Field Name="EndDate_CourseCab">
+          <DataField>EndDate_CourseCab</DataField>
+        </Field>
+        <Field Name="Duration_CourseCab">
+          <DataField>Duration_CourseCab</DataField>
+        </Field>
+        <Field Name="Duration_CourseCabFormat">
+          <DataField>Duration_CourseCabFormat</DataField>
+        </Field>
+        <Field Name="CodProf_CourseCab">
+          <DataField>CodProf_CourseCab</DataField>
+        </Field>
+        <Field Name="ProfName_CourseCab">
+          <DataField>ProfName_CourseCab</DataField>
+        </Field>
+        <Field Name="CodClassroom_CourseCab">
+          <DataField>CodClassroom_CourseCab</DataField>
+        </Field>
+        <Field Name="ClassroomName_CourseCab">
+          <DataField>ClassroomName_CourseCab</DataField>
+        </Field>
+        <Field Name="CodStudent_CourseLine">
+          <DataField>CodStudent_CourseLine</DataField>
+        </Field>
+        <Field Name="StudentName_CourseLine">
+          <DataField>StudentName_CourseLine</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

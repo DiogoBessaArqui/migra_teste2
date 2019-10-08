@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportTitle">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReportTitle</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodCourse_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodCourse_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodCourse_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CourseName_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CourseName_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CourseName_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="InitialDate_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>InitialDate_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>InitialDate_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FinalDate_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FinalDate_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FinalDate_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Duration_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Duration_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Duration_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodProf_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodProf_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodProf_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProfName_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProfName_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProfName_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodClassroom_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodClassroom_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodClassroom_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ClassroomName_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ClassroomName_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ClassroomName_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PreviousCodeCourse_HistCourseCabCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PreviousCodeCourse_HistCourseCabCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PreviousCodeCourse_HistCourseCabCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodStudent_HistCourseLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodStudent_HistCourseLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodStudent_HistCourseLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StudentName_HistCourseLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>StudentName_HistCourseLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StudentName_HistCourseLineCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CodCourse_HistCourseCab">
+          <DataField>CodCourse_HistCourseCab</DataField>
+        </Field>
+        <Field Name="CourseName_HistCourseCab">
+          <DataField>CourseName_HistCourseCab</DataField>
+        </Field>
+        <Field Name="InitialDate_HistCourseCab">
+          <DataField>InitialDate_HistCourseCab</DataField>
+        </Field>
+        <Field Name="FinalDate_HistCourseCab">
+          <DataField>FinalDate_HistCourseCab</DataField>
+        </Field>
+        <Field Name="Duration_HistCourseCab">
+          <DataField>Duration_HistCourseCab</DataField>
+        </Field>
+        <Field Name="Duration_HistCourseCabFormat">
+          <DataField>Duration_HistCourseCabFormat</DataField>
+        </Field>
+        <Field Name="CodProf_HistCourseCab">
+          <DataField>CodProf_HistCourseCab</DataField>
+        </Field>
+        <Field Name="ProfName_HistCourseCab">
+          <DataField>ProfName_HistCourseCab</DataField>
+        </Field>
+        <Field Name="CodClassroom_HistCourseCab">
+          <DataField>CodClassroom_HistCourseCab</DataField>
+        </Field>
+        <Field Name="ClassroomName_HistCourseCab">
+          <DataField>ClassroomName_HistCourseCab</DataField>
+        </Field>
+        <Field Name="PreviousCodeCourse_HistCourseCab">
+          <DataField>PreviousCodeCourse_HistCourseCab</DataField>
+        </Field>
+        <Field Name="CodStudent_HistCourseLine">
+          <DataField>CodStudent_HistCourseLine</DataField>
+        </Field>
+        <Field Name="StudentName_HistCourseLine">
+          <DataField>StudentName_HistCourseLine</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
